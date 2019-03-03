@@ -1,11 +1,14 @@
 #!/bin/bash -xe
 
-install_deps() {
-    pip install pytest
-}
 
 main() {
-    echo "TODO: Add functional tests"
+    build
 }
+
+
+build() {
+    ENV="TAGS=libvirt" ./hack/dockerized.sh hack/build.sh
+}
+
 
 [[ "${BASH_SOURCE[0]}" == "$0" ]] && main "$@"
