@@ -11,5 +11,3 @@ RUN yum -y --setopt=skip_missing_names_on_install=True \
 # Misc configurations
 COPY augconf /augconf
 RUN augtool -f /augconf
-COPY setup.sh /setup.sh
-RUN /setup.sh
