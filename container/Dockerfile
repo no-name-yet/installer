@@ -4,6 +4,7 @@ RUN yum -y --setopt=skip_missing_names_on_install=True \
         install \
         NetworkManager \
         dnsmasq \
+        openssh-clients \
         augeas; \
         yum clean all; \
         systemctl enable NetworkManager
