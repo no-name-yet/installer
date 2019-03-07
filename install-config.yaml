@@ -1,0 +1,28 @@
+apiVersion: v1beta3
+baseDomain: tt.testing
+compute:
+- name: worker
+  platform: {}
+  replicas: 1
+controlPlane:
+  name: master
+  platform: {}
+  replicas: 1
+metadata:
+  creationTimestamp: null
+  name: test1
+networking:
+  clusterNetworks:
+  - cidr: 10.128.0.0/14
+    hostSubnetLength: 9
+  machineCIDR: 192.168.126.0/24
+  serviceCIDR: 172.30.0.0/16
+  type: OpenShiftSDN
+platform:
+  libvirt:
+    URI: qemu+tcp://192.168.122.1/system
+    network:
+      if: tt0
+pullSecret: '{"auths": {"quay.io": {"auth": "aValidPullSecret","email": ""}}}'
+sshKey: |
+    ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCV5qsi7KlvlYcQtL70JuxoxlUg2PiYFmD2O+Hgy6a9J/fRHI9b0cqY2fmLSl4zmW1JIBPYVU8ZktScI1SiHsM+mlXtReI5cwM6nTqT/pASprNUHwqWgOJrJmjZJ/BtXbA6e3ydAqqTHZ4h2c8QBT4jLvdWOwSy5ZcRD2HjVWH0bhkCQiOycf/BqdTVs3zUdM0qs6qRwQFaMdNKAu5H2E/M1BWks6ks9kW3dWtVJwupcc6xb5kAa49z9cXflaSeFNhJTcFs6D64zPLf9brhdTvK9SyCQtQgKMIItTrBiqTyfD+EFHvfEc+hX+DIJYci0gw0dRZghKT6RUUpXOM+WzUf test-key
